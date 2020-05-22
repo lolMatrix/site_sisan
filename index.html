@@ -2,10 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Cen.sir</title>
     <link rel="stylesheet" href="css/main.css">
+    
 </head>
 <body>
+   <header>
+       <div id="logo" onclick="slowScroll('#top')">
+           <span>Cen.sir</span>
+       </div>
+       <div id="about">
+            <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+            <a href="#" title="Преимущества" onclick="slowScroll('#overiew')">Преимущества</a>
+            <a href="#" title="Контакты" onclick="slowScroll('#contact')">Контакты</a>
+            <a href="#" title="Ответы на вопросы" onclick="slowScroll('#faq')">FAQ</a>
+       </div>
+   </header>
    
+   <div id="top">
+       <h1>Cen.Sir</h1>
+       <h3>Лучший модератор этой качалки</h3>
+   </div>
+   
+   <div id="main">
+       <div class="intro">
+           <h2>Сервис для контент-мейкеров</h2>
+           <span>Для решения проблемы модерирования контента</span>
+       </div>
+       <div class="text">
+           <span>Наша цель - повысить лояльность аудитории путем очистки комментариев от токсичных людей. Мы ставим перед собой задачу полностью заменить людей и автоматизировать процесс модерирования.</span>
+       </div>
+   </div>
+   <div id="overiew">
+   </div>
+   <div id="contact">
+   </div>
+   <div id="faq"></div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+       function slowScroll(id){
+           $('html, body').animate({
+               scrollTop: $(id).offset().top
+           }, 500);
+       }
+       $(document).on("scroll", function(){
+           if($(window).scrollTop() === 0){
+               $("header").removeClass("fixed");
+           }else{
+               $("header").attr("class", "fixed");
+           }
+       });
+   </script>
 </body>
 </html>
